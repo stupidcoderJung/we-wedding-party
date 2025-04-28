@@ -58,6 +58,7 @@
             line-height: 1.6;
             width: 100%;
             max-width: 100vw;
+            overflow-x: hidden;
         }
         .container {
             width: 100%;
@@ -336,6 +337,68 @@
             margin-bottom: 5px;
             color: #b19b77;
         }
+        
+        /* 지도 스타일 수정 */
+        .map-container {
+            width: 100%;
+            margin: 30px 0;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        .map-image {
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            display: block;
+        }
+        .map-footer {
+            background-color: #f9f9f9;
+            padding: 10px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-top: none;
+            border-radius: 0 0 15px 15px;
+        }
+        .map-footer img {
+            height: 16px;
+        }
+        .map-footer-links {
+            display: flex;
+            gap: 15px;
+            font-size: 12px;
+        }
+        .map-footer-links a {
+            color: #333;
+            text-decoration: none;
+        }
+        
+        /* 음악 플레이어 스타일 */
+        .music-player {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background-color: rgba(177, 155, 119, 0.8);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .music-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 </head>
 <body>
@@ -390,7 +453,22 @@
                 <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%EC%A0%95%EC%A7%80%EC%9B%90%20%EC%9D%B4%EC%98%81%EC%9D%80%20%EA%B2%B0%ED%98%BC%EC%8B%9D&dates=20250607T053000Z/20250607T073000Z&details=%EC%A0%95%EC%A7%80%EC%9B%90%20%EC%9D%B4%EC%98%81%EC%9D%80%EC%9D%98%20%EA%B2%B0%ED%98%BC%EC%8B%9D%EC%97%90%20%EC%B4%88%EB%8C%80%ED%95%A9%EB%8B%88%EB%8B%A4&location=%EB%AA%85%EB%8F%99%20%EB%A5%B4%EA%BC%B4%EB%A6%AC%EC%95%BC%20%EA%B7%B8%EB%9E%9C%EB%93%9C%ED%99%80%2C%20%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%A4%91%EA%B5%AC%20%EB%AA%85%EB%8F%99%EA%B8%B8%2074" target="_blank" class="calendar-button">캘린더에 저장</a>
             </div>
 
-            <div style="font:normal normal 400 12px/normal dotum, sans-serif; width:640px; height:392px; color:#333; position:relative"><div style="height: 360px;"><a href="https://map.kakao.com/?urlX=478054.9999999992&amp;urlY=1097927.0000000019&amp;itemId=598016577&amp;q=%EB%A7%88%EB%B2%A8%EB%A6%AC%EC%97%90%20%EC%8B%9C%ED%9D%A5%EC%A0%90&amp;srcid=598016577&amp;map_type=TYPE_MAP&amp;from=roughmap" target="_blank"><img class="map" src="http://t1.daumcdn.net/roughmap/imgmap/39ee5c2aa036a61de63c2a047d560ba4fc2fa36adedb6fe50c9b48833b9eecf1" width="638px" height="358px" style="border:1px solid #ccc;"></a></div><div style="overflow: hidden; padding: 7px 11px; border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 0px 0px 2px 2px; background-color: rgb(249, 249, 249);"><a href="https://map.kakao.com" target="_blank" style="float: left;"><img src="//t1.daumcdn.net/localimg/localimages/07/2018/pc/common/logo_kakaomap.png" width="72" height="16" alt="카카오맵" style="display:block;width:72px;height:16px"></a><div style="float: right; position: relative; top: 1px; font-size: 11px;"><a target="_blank" href="https://map.kakao.com/?from=roughmap&amp;srcid=598016577&amp;confirmid=598016577&amp;q=%EB%A7%88%EB%B2%A8%EB%A6%AC%EC%97%90%20%EC%8B%9C%ED%9D%A5%EC%A0%90&amp;rv=on" style="float:left;height:15px;padding-top:1px;line-height:15px;color:#000;text-decoration: none;">로드뷰</a><span style="width: 1px;padding: 0;margin: 0 8px 0 9px;height: 11px;vertical-align: top;position: relative;top: 2px;border-left: 1px solid #d0d0d0;float: left;"></span><a target="_blank" href="https://map.kakao.com/?from=roughmap&amp;eName=%EB%A7%88%EB%B2%A8%EB%A6%AC%EC%97%90%20%EC%8B%9C%ED%9D%A5%EC%A0%90&amp;eX=478054.9999999992&amp;eY=1097927.0000000019" style="float:left;height:15px;padding-top:1px;line-height:15px;color:#000;text-decoration: none;">길찾기</a><span style="width: 1px;padding: 0;margin: 0 8px 0 9px;height: 11px;vertical-align: top;position: relative;top: 2px;border-left: 1px solid #d0d0d0;float: left;"></span><a target="_blank" href="https://map.kakao.com?map_type=TYPE_MAP&amp;from=roughmap&amp;srcid=598016577&amp;itemId=598016577&amp;q=%EB%A7%88%EB%B2%A8%EB%A6%AC%EC%97%90%20%EC%8B%9C%ED%9D%A5%EC%A0%90&amp;urlX=478054.9999999992&amp;urlY=1097927.0000000019" style="float:left;height:15px;padding-top:1px;line-height:15px;color:#000;text-decoration: none;">지도 크게 보기</a></div></div><div><span style="border-bottom:1px solid #f2f2f2;position:absolute;left:-25px;top:-136px;width:0px;height:40px"></span></div><div><span style="border-bottom:1px solid #f2f2f2;position:absolute;left:-25px;top:-136px;width:0px;height:40px"></span><span style="stripe:undefined;position:absolute;left:-25px;top:-136px"></span><a href="https://map.kakao.com/?from=roughmap&amp;subwayId=SES1703" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px;width:0px;height:0px">금천구청역</a></div><div><br style="display: none;"><span style="font-weight:700;position:absolute;left:-25px;top:-136px">주변 지하철</span></div><div><span style="border-bottom:1px solid #f2f2f2;position:absolute;left:-25px;top:-136px;width:0px;height:40px"></span><span style="position:absolute;left:-25px;top:-136px"><img src="//t1.daumcdn.net/localimg/localimages/07/2018/pc/map/marker_bus01.png"></span><a href="https://map.kakao.com/?from=roughmap&amp;busStopId=12180621021" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px;width:0px;height:0px">시흥사거리(중)</a><span style="position:absolute;left:-25px;top:-136px"><img src="//t1.daumcdn.net/localimg/localimages/07/2018/pc/map/marker_bus02.png"></span><a href="https://map.kakao.com/?from=roughmap&amp;busStopId=BS546192" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px;width:0px;height:0px">시흥사거리</a><span style="position:absolute;left:-25px;top:-136px"><img src="//t1.daumcdn.net/localimg/localimages/07/2018/pc/map/marker_bus03.png"></span><a href="https://map.kakao.com/?from=roughmap&amp;busStopId=BS118020" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px;width:0px;height:0px">홈플러스.문일중고입구</a><span style="position:absolute;left:-25px;top:-136px"><img src="//t1.daumcdn.net/localimg/localimages/07/2018/pc/map/marker_bus04.png"></span><a href="https://map.kakao.com/?from=roughmap&amp;busStopId=BS145699" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px;width:0px;height:0px">시흥사거리</a><span style="position:absolute;left:-25px;top:-136px"><img src="//t1.daumcdn.net/localimg/localimages/07/2018/pc/map/marker_bus05.png"></span><a href="https://map.kakao.com/?from=roughmap&amp;busStopId=11180571006" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px;width:0px;height:0px">문일고입구</a><span style="position:absolute;left:-25px;top:-136px"><img src="//t1.daumcdn.net/localimg/localimages/07/2018/pc/map/marker_bus06.png"></span><a href="https://map.kakao.com/?from=roughmap&amp;busStopId=12180571001" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px;width:0px;height:0px">시흥사거리(중)</a><span style="position:absolute;left:-25px;top:-136px"><img src="//t1.daumcdn.net/localimg/localimages/07/2018/pc/map/marker_bus07.png"></span><a href="https://map.kakao.com/?from=roughmap&amp;busStopId=BS117770" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px;width:0px;height:0px">홈플러스.문일중고입구</a><span style="position:absolute;left:-25px;top:-136px"><img src="//t1.daumcdn.net/localimg/localimages/07/2018/pc/map/marker_bus08.png"></span><a href="https://map.kakao.com/?from=roughmap&amp;busStopId=11180621020" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px;width:0px;height:0px">문일고입구</a><span style="position:absolute;left:-25px;top:-136px"><img src="//t1.daumcdn.net/localimg/localimages/07/2018/pc/map/marker_bus09.png"></span><a href="https://map.kakao.com/?from=roughmap&amp;busStopId=BS117756" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px;width:0px;height:0px">성지아파트</a><span style="position:absolute;left:-25px;top:-136px"><img src="//t1.daumcdn.net/localimg/localimages/07/2018/pc/map/marker_bus10.png"></span><a href="https://map.kakao.com/?from=roughmap&amp;busStopId=BS118030" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px;width:0px;height:0px">성지아파트</a><span style="position:absolute;left:-25px;top:-136px"><img src="//t1.daumcdn.net/localimg/localimages/07/2018/pc/map/marker_bus11.png"></span><a href="https://map.kakao.com/?from=roughmap&amp;busStopId=11180571010" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px;width:0px;height:0px">시흥사거리.금천파출소</a></div><div><br style="display: none;"><span style="font-weight:700;position:absolute;left:-25px;top:-136px">주변 정류장</span></div><div><span style="border-bottom:0px none #333333;position:absolute;left:-25px;top:-136px;width:0px;height:40px"></span><span style="stripe:undefined;position:absolute;left:-25px;top:-136px"></span><a href="https://map.kakao.com/?from=roughmap&amp;busInfoId=1100061471&amp;busStopId=12180621021" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px">500</a><span style="stripe:undefined;position:absolute;left:-25px;top:-136px"></span><a href="https://map.kakao.com/?from=roughmap&amp;busInfoId=1100071785&amp;busStopId=12180621021" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px">5530</a><span style="inline:undefined;position:absolute;left:-25px;top:-136px"></span><a href="https://map.kakao.com/?from=roughmap&amp;busInfoId=1100071800&amp;busStopId=12180621021" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px">5531</a><span style="inline:undefined;position:absolute;left:-25px;top:-136px"></span><a href="https://map.kakao.com/?from=roughmap&amp;busInfoId=1100071579&amp;busStopId=12180621021" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px">5617</a><span style="inline:undefined;position:absolute;left:-25px;top:-136px"></span><a href="https://map.kakao.com/?from=roughmap&amp;busInfoId=1100071778&amp;busStopId=12180621021" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px">5618</a><span style="inline:undefined;position:absolute;left:-25px;top:-136px"></span><a href="https://map.kakao.com/?from=roughmap&amp;busInfoId=1100071784&amp;busStopId=12180621021" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px">5623</a><span style="inline:undefined;position:absolute;left:-25px;top:-136px"></span><a href="https://map.kakao.com/?from=roughmap&amp;busInfoId=1100071787&amp;busStopId=12180621021" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px">5625</a><span style="inline:undefined;position:absolute;left:-25px;top:-136px"></span><a href="https://map.kakao.com/?from=roughmap&amp;busInfoId=1100071758&amp;busStopId=12180621021" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px">5626</a><span style="inline:undefined;position:absolute;left:-25px;top:-136px"></span><a href="https://map.kakao.com/?from=roughmap&amp;busInfoId=1100071788&amp;busStopId=12180621021" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px">5713</a><span style="inline:undefined;position:absolute;left:-25px;top:-136px"></span><a href="https://map.kakao.com/?from=roughmap&amp;busInfoId=1100071780&amp;busStopId=BS546192" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px">5633</a><span style="inline:undefined;position:absolute;left:-25px;top:-136px"></span><a href="https://map.kakao.com/?from=roughmap&amp;busInfoId=1473&amp;busStopId=12180571001" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px">5537</a><span style="inline:undefined;position:absolute;left:-25px;top:-136px"></span><a href="https://map.kakao.com/?from=roughmap&amp;busInfoId=1100071782&amp;busStopId=11180571010" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px">5627</a><span style="stripe:undefined;position:absolute;left:-25px;top:-136px"></span><a href="https://map.kakao.com/?from=roughmap&amp;busInfoId=1100092014&amp;busStopId=12180621021" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px">6004</a><span style="stripe:undefined;position:absolute;left:-25px;top:-136px"></span><a href="https://map.kakao.com/?from=roughmap&amp;busInfoId=6015&amp;busStopId=12180621021" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px">1</a><span style="inline:undefined;position:absolute;left:-25px;top:-136px"></span><a href="https://map.kakao.com/?from=roughmap&amp;busInfoId=B9597&amp;busStopId=12180621021" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px">388</a><span style="inline:undefined;position:absolute;left:-25px;top:-136px"></span><a href="https://map.kakao.com/?from=roughmap&amp;busInfoId=B7181&amp;busStopId=12180621021" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px">5</a><span style="inline:undefined;position:absolute;left:-25px;top:-136px"></span><a href="https://map.kakao.com/?from=roughmap&amp;busInfoId=6001&amp;busStopId=12180621021" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px">51</a><span style="inline:undefined;position:absolute;left:-25px;top:-136px"></span><a href="https://map.kakao.com/?from=roughmap&amp;busInfoId=B78751&amp;busStopId=12180621021" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px">5601</a><span style="inline:undefined;position:absolute;left:-25px;top:-136px"></span><a href="https://map.kakao.com/?from=roughmap&amp;busInfoId=B6116&amp;busStopId=12180621021" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px">5602</a><span style="inline:undefined;position:absolute;left:-25px;top:-136px"></span><a href="https://map.kakao.com/?from=roughmap&amp;busInfoId=6022&amp;busStopId=12180621021" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px">9-3</a><span style="inline:undefined;position:absolute;left:-25px;top:-136px"></span><a href="https://map.kakao.com/?from=roughmap&amp;busInfoId=9566&amp;busStopId=12180621021" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px">900</a><span style="inline:undefined;position:absolute;left:-25px;top:-136px"></span><a href="https://map.kakao.com/?from=roughmap&amp;busInfoId=B7184&amp;busStopId=12180571001" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px">9</a><span style="stripe:undefined;position:absolute;left:-25px;top:-136px"></span><a href="https://map.kakao.com/?from=roughmap&amp;busInfoId=B9894&amp;busStopId=12180621021" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px">금천06</a><span style="inline:undefined;position:absolute;left:-25px;top:-136px"></span><a href="https://map.kakao.com/?from=roughmap&amp;busInfoId=B10004&amp;busStopId=12180621021" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px">금천07</a><span style="inline:undefined;position:absolute;left:-25px;top:-136px"></span><a href="https://map.kakao.com/?from=roughmap&amp;busInfoId=B9927&amp;busStopId=BS546192" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px">금천04</a><span style="stripe:undefined;position:absolute;left:-25px;top:-136px"></span><a href="https://map.kakao.com/?from=roughmap&amp;busInfoId=B3601&amp;busStopId=12180621021" target="_blank" style="text-decoration: none;color: #333;position:absolute;left:-25px;top:-136px">5609</a></div><div><br style="display: none;"><span style="font-weight:700;position:absolute;left:-25px;top:-136px">주변 버스</span></div></div>
+            <!-- 지도 부분 수정 -->
+            <div class="map-container">
+                <a href="https://map.kakao.com/?urlX=478054.9999999992&amp;urlY=1097927.0000000019&amp;itemId=598016577&amp;q=%EB%A7%88%EB%B2%A8%EB%A6%AC%EC%97%90%20%EC%8B%9C%ED%9D%A5%EC%A0%90&amp;srcid=598016577&amp;map_type=TYPE_MAP&amp;from=roughmap" target="_blank">
+                    <img class="map-image" src="http://t1.daumcdn.net/roughmap/imgmap/39ee5c2aa036a61de63c2a047d560ba4fc2fa36adedb6fe50c9b48833b9eecf1" width="100%" alt="마벨리에 시흥점 위치">
+                </a>
+                <div class="map-footer">
+                    <a href="https://map.kakao.com" target="_blank">
+                        <img src="//t1.daumcdn.net/localimg/localimages/07/2018/pc/common/logo_kakaomap.png" alt="카카오맵">
+                    </a>
+                    <div class="map-footer-links">
+                        <a target="_blank" href="https://map.kakao.com/?from=roughmap&amp;srcid=598016577&amp;confirmid=598016577&amp;q=%EB%A7%88%EB%B2%A8%EB%A6%AC%EC%97%90%20%EC%8B%9C%ED%9D%A5%EC%A0%90&amp;rv=on">로드뷰</a>
+                        <a target="_blank" href="https://map.kakao.com/?from=roughmap&amp;eName=%EB%A7%88%EB%B2%A8%EB%A6%AC%EC%97%90%20%EC%8B%9C%ED%9D%A5%EC%A0%90&amp;eX=478054.9999999992&amp;eY=1097927.0000000019">길찾기</a>
+                        <a target="_blank" href="https://map.kakao.com?map_type=TYPE_MAP&amp;from=roughmap&amp;srcid=598016577&amp;itemId=598016577&amp;q=%EB%A7%88%EB%B2%A8%EB%A6%AC%EC%97%90%20%EC%8B%9C%ED%9D%A5%EC%A0%90&amp;urlX=478054.9999999992&amp;urlY=1097927.0000000019">지도 크게 보기</a>
+                    </div>
+                </div>
+            </div>
             
             <div class="transportation-info">
                 <div class="transportation-item">
@@ -486,100 +564,92 @@
 
         <div class="divider"></div>
 
-<h2 class="section-title">GALLERY</h2>
+        <h2 class="section-title">GALLERY</h2>
 
-<div class="gallery-section">
-    <div class="gallery-container">
-        <!-- Swiper -->
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <!-- 여기에 실제 갤러리 사진들을 추가하세요 -->
-                <div class="swiper-slide">
-                    <img src="gallery/001.jpeg" alt="웨딩 사진 1">
+        <div class="gallery-section">
+            <div class="gallery-container">
+                <!-- Swiper -->
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <!-- 여기에 실제 갤러리 사진들을 추가하세요 -->
+                        <div class="swiper-slide">
+                            <img src="gallery/001.jpeg" alt="웨딩 사진 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="gallery/007.jpeg" alt="웨딩 사진 2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="gallery/008.jpeg" alt="웨딩 사진 3">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="gallery/010.jpeg" alt="웨딩 사진 4">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="gallery/005.jpeg" alt="웨딩 사진 5">
+                        </div>
+                    </div>
                 </div>
-                <div class="swiper-slide">
-                    <img src="gallery/007.jpeg" alt="웨딩 사진 2">
-                </div>
-                <div class="swiper-slide">
-                    <img src="gallery/008.jpeg" alt="웨딩 사진 3">
-                </div>
-                <div class="swiper-slide">
-                    <img src="gallery/010.jpeg" alt="웨딩 사진 4">
-                </div>
-                <div class="swiper-slide">
-                    <img src="gallery/005.jpeg" alt="웨딩 사진 5">
-                </div>
+                <div class="gallery-pagination"></div>
             </div>
+            <p class="gallery-instruction">← 좌우로 밀어서 더 많은 사진을 확인하세요 →</p>
         </div>
-        <div class="gallery-pagination"></div>
-    </div>
-    <p class="gallery-instruction">← 좌우로 밀어서 더 많은 사진을 확인하세요 →</p>
-</div>
         
         <div class="footer">
             <p>© 2025 정지원 & 이영은의 결혼식</p>
         </div>
     </div>
 
-    <!-- body 태그 닫기 전에 Swiper JS와 갤러리 스크립트 추가 -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.4.1/swiper-bundle.min.js"></script>
+    <!-- 음악 재생 버튼 -->
+    <div class="music-player">
+        <button id="playMusic" class="music-button">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                <path d="M8 5v14l11-7z"/>
+            </svg>
+        </button>
+    </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 1.2,
-            spaceBetween: 20,
-            centeredSlides: true,
-            grabCursor: true,
-            loop: true,
-            pagination: {
-                el: ".gallery-pagination",
-                clickable: true,
-            },
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
-            breakpoints: {
-                640: {
-                    slidesPerView: 2.2,
+    <audio id="bgMusic" loop>
+        <source src="lovely.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- 스크립트 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.4.1/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 갤러리 스와이퍼 초기화
+            var swiper = new Swiper(".mySwiper", {
+                slidesPerView: 1.2,
+                spaceBetween: 20,
+                centeredSlides: true,
+                grabCursor: true,
+                loop: true,
+                pagination: {
+                    el: ".gallery-pagination",
+                    clickable: true,
                 },
-                768: {
-                    slidesPerView: 2.5,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
                 },
-                1024: {
-                    slidesPerView: 3.5,
+                breakpoints: {
+                    640: {
+                        slidesPerView: 2.2,
+                    },
+                    768: {
+                        slidesPerView: 2.5,
+                    },
+                    1024: {
+                        slidesPerView: 3.5,
+                    },
                 },
-            },
-        });
-    });
-</script>
+            });
 
-<!-- 음악 재생 버튼 추가 -->
-<div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; background-color: rgba(177, 155, 119, 0.8); border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-    <button id="playMusic" style="background: none; border: none; cursor: pointer; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
-            <path d="M8 5v14l11-7z"/>
-        </svg>
-    </button>
-</div>
-
-<audio id="bgMusic" loop>
-  <source src="lovely.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-  document.getElementById('playMusic').addEventListener('click', function() {
-    var music = document.getElementById('bgMusic');
-    if (music.paused) {
-      music.play();
-      this.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
-    } else {
-      music.pause();
-      this.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>';
-    }
-  });
-</script>
-
-</body>
-</html>
+            // 음악 재생 버튼 이벤트
+            document.getElementById('playMusic').addEventListener('click', function() {
+                var music = document.getElementById('bgMusic');
+                if (music.paused) {
+                    music.play();
+                    this.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
+                } else {
+                    music.pause();
+                    this.innerHTML =
