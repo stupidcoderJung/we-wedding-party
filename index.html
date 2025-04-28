@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정지원 ♡ 이영은의 청첩장</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.4.1/swiper-bundle.min.css" />
+    <!-- 카카오 API 연동 -->
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script>
+        // 카카오 SDK 초기화 - 실제 사용시 발급받은 API 키로 교체 필요
+        document.addEventListener('DOMContentLoaded', function() {
+            Kakao.init('8589c1fd8bd94bddac8befc525a4613e');
+            console.log(Kakao.isInitialized());
+        });
+        
+        // 카카오톡 공유하기
+        function shareToKakao() {
+            Kakao.Share.sendDefault({
+                objectType: 'feed',
+                content: {
+                    title: '정지원 ♡ 이영은, 평생을 약속하게 되었습니다',
+                    description: '2025년 6월 7일 토요일 오후 12시 00분, 온이네 집',
+                    imageUrl: 'https://cdn.pixabay.com/photo/2017/08/08/00/17/wedding-2609901_1280.jpg', // 실제 이미지 URL로 교체 필요
+                    link: {
+                        mobileWebUrl: 'https://stupidcoderjung.github.io/we-wedding/',
+                        webUrl: 'https://stupidcoderjung.github.io/we-wedding/',
+                    },
+                },
+                buttons: [
+                    {
+                        title: '우리의 시작을 담았어요',
+                        link: {
+                            mobileWebUrl: 'https://stupidcoderjung.github.io/we-wedding/',
+                            webUrl: 'https://stupidcoderjung.github.io/we-wedding/',
+                        },
+                    },
+                ],
+            });
+        }
+        
+        // 카카오페이 송금링크로 이동
+        function openKakaopay() {
+            // 카카오페이 송금링크 - 신랑 계좌번호로 변경 필요
+            window.location.href = 'https://qr.kakaopay.com/Ej75J2OSk';// 예시 링크, 실제 사용시 변경 필요
+        }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+        }
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            width: 100%;
+            max-width: 100vw;
+        }
+        .container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        .cover {
+            position: relative;
+            width: 100%;
+            background-color: #f5f5f5;
+            overflow: hidden;
+        }
+        .cover-image {
+            width: 100%;
+            display: block;
+        }
+        .cover-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            padding: 40px 20px 50px;
+            text-align: center;
+        }
+        .couple-names {
+            font-size: 22px;
+            font-weight: 500;
+            color: #b19b77;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        .heart-icon {
+            font-size: 12px;
+            margin: 0 8px;
+            color: #b19b77;
+        }
+        .wedding-date {
+            font-size: 16px;
+            color: #b19b77;
+            margin-bottom: 10px;
+        }
+        .wedding-venue {
+            font-size: 16px;
+            color: #b19b77;
+        }
+        .content-section {
+            padding: 60px 25px;
+            background-color: white;
+        }
+        .invitation-text {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 16px;
+            line-height: 1.8;
+            color: #666;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 500;
+            color: #b19b77;
+            margin-bottom: 30px;
+        }
+        .divider {
+            width: 40px;
+            height: 1px;
+            background-color: #e0d5c5;
+            margin: 40px auto;
+        }
+        .details-card {
+            background-color: #f9f7f4;
+            border-radius: 15px;
+            padding: 35px 25px;
+            margin-bottom: 50px;
+        }
+        .details-item {
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .details-item:last-child {
+            margin-bottom: 0;
+        }
+        .details-label {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: #b19b77;
+        }
+        .details-text {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.5;
+        }
+        .calendar-button {
+            display: block;
+            margin: 25px auto 0;
+            width: 180px;
+            padding: 12px 0;
+            background-color: #b19b77;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 14px;
+        }
+        .family-section {
+            margin-bottom: 50px;
+        }
+        .family-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .family-column {
+            text-align: center;
+        }
+        .family-role {
+            font-size: 15px;
+            margin-bottom: 12px;
+            color: #b19b77;
+        }
+        .family-name {
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: #666;
+        }
+        .family-child {
+            font-size: 15px;
+            color: #888;
+        }
+        .contact-section {
+            margin-bottom: 50px;
+        }
+        .notice-card {
+            background-color: #f9f7f4;
+            border-radius: 15px;
+            padding: 35px 14px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        .notice-text {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .account-info {
+            font-size: 16px;
+            color: #666;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        .message {
+            text-align: center;
+            margin: 50px 0;
+            font-size: 16px;
+            line-height: 1.8;
+            color: #666;
+        }
+        .button-container {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        .button {
+            flex: 1;
+            padding: 15px 0;
+            text-align: center;
+            text-decoration: none;
+            font-size: 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .primary-button {
+            background-color: #b19b77;
+            color: white;
+        }
+        .secondary-button {
+            background-color: white;
+            color: #b19b77;
+            border: 1px solid #b19b77;
+        }
+        .footer {
+            padding: 40px 0;
+            text-align: center;
+            background-color: #f9f7f4;
+            color: #b19b77;
+            font-size: 14px;
+        }
+        
+    
+        /* 갤러리 스타일 */
+        .gallery-section {
+            padding: 60px 0 40px;
+            background-color: white;
+        }
+        .gallery-container {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f9f7f4;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .gallery-pagination {
+            position: relative;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .swiper-pagination-bullet {
+            width: 8px;
+            height: 8px;
+            background-color: #e0d5c5;
+            opacity: 0.5;
+        }
+        .swiper-pagination-bullet-active {
+            background-color: #b19b77;
+            opacity: 1;
+        }
+        .gallery-instruction {
+            text-align: center;
+            color: #b19b77;
+            font-size: 14px;
+            margin: 15px 0 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cover">
+            <img src="image2.png" alt="웨딩 사진" class="cover-image">
+            <div class="cover-info">
+                <h1 class="couple-names">정지원 <span class="heart-icon">♡</span> 이영은</h1>
+                <p class="wedding-date">2025.06.07 토 오후 12:00</p>
+                <p class="wedding-venue">온이네 집</p>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <div class="invitation-text">
+                <p>
+                    정신없던 남자와 원칙주의자 여자가<br/>
+                    강아지를 사이에 두고 운명처럼 만났습니다.<br/>
+                    <br/>
+                    덜렁대던 일상엔 질서가 생겼고,<br/>
+                    지나치게 정확했던 하루엔 웃음이 더해졌습니다.<br/>
+                    <br/>
+                    서로를 닮아가며,<br/>
+                    둘 보다는 넷이 더 따뜻한<br/>
+                    그런 하루들을 살아가려 합니다.
+                </p>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <h2 class="section-title">WEDDING INFORMATION</h2>
+            
+            <div class="details-card">
+                <div class="details-item">
+                    <div class="details-label">날짜 및 시간</div>
+                    <div class="details-text">2025년 6월 7일 토요일<br>오후 12시 00분</div>
+                </div>
+                
+                <div class="details-item">
+                    <div class="details-label">장소</div>
+                    <div class="details-text">온이네 집</div>
+                </div>
+                
+                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=%EC%A0%95%EC%A7%80%EC%9B%90%20%EC%9D%B4%EC%98%81%EC%9D%80%20%EA%B2%B0%ED%98%BC%EC%8B%9D&dates=20250607T053000Z/20250607T073000Z&details=%EC%A0%95%EC%A7%80%EC%9B%90%20%EC%9D%B4%EC%98%81%EC%9D%80%EC%9D%98%20%EA%B2%B0%ED%98%BC%EC%8B%9D%EC%97%90%20%EC%B4%88%EB%8C%80%ED%95%A9%EB%8B%88%EB%8B%A4&location=%EB%AA%85%EB%8F%99%20%EB%A5%B4%EA%BC%B4%EB%A6%AC%EC%95%BC%20%EA%B7%B8%EB%9E%9C%EB%93%9C%ED%99%80%2C%20%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%A4%91%EA%B5%AC%20%EB%AA%85%EB%8F%99%EA%B8%B8%2074" target="_blank" class="calendar-button">캘린더에 저장</a>
+            </div>
+            
+            <div class="notice-card">
+                <div class="notice-text">
+                    <p>
+                        저희 두 사람의 소중한 시작을<br>
+                        양가 직계 가족분들과 함께<br>
+                        조용하고 뜻깊게 치르려 합니다.<br>
+                        <br>
+                        함께 자리를 하지 못해 아쉬운 마음 크지만,<br>
+                        멀리서나마 축복의 마음을 보내주신다면<br>
+                        더없는 감사와 기쁨이 되겠습니다.
+                    </p>
+                </div>
+                
+                <div class="account-info">
+                    <p>
+                        <strong>축하의 마음을 전하실 분들을 위한 계좌번호</strong><br>
+                        <br>
+                        신랑측: 신한은행 110-331-007490 정지원<br>
+                        신부측: 카카오뱅크 3333-07-0314529 이영은
+                    </p>
+                </div>
+            </div>
+            
+            <h2 class="section-title">PARENTS</h2>
+            
+            <div class="family-section">
+                <div class="family-grid">
+                    <div class="family-column">
+                        <p class="family-role">신랑 측</p>
+                        <p class="family-name">정현훈 · 박종영</p>
+                        <p class="family-child">의 장남 <strong>지원</strong></p>
+                    </div>
+                    
+                    <div class="family-column">
+                        <p class="family-role">신부 측</p>
+                        <p class="family-name">이정근 · 김슬람</p>
+                        <p class="family-child">의 장녀 <strong>영은</strong></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="message">
+                <p>
+                    두 사람과 두 마리 강아지,  <br>
+                    넷이 함께하는 하루가 시작됩니다.<br>
+                    서로를 닮아가며,  <br>
+                    웃음과 배려로 채워갈 우리의 날들을  <br>
+                    따뜻한 마음으로 지켜봐 주세요.
+                </p>
+            </div>
+            
+            <div class="button-container">
+                <a href="javascript:shareToKakao();" class="button primary-button">우리의 시작을 전해주세요</a>
+                <a href="javascript:openKakaopay();" class="button secondary-button">마음 전하기</a>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+<h2 class="section-title">GALLERY</h2>
+
+<div class="gallery-section">
+    <div class="gallery-container">
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <!-- 여기에 실제 갤러리 사진들을 추가하세요 -->
+                <div class="swiper-slide">
+                    <img src="gallery/001.jpeg" alt="웨딩 사진 1">
+                </div>
+                <div class="swiper-slide">
+                    <img src="gallery/007.jpeg" alt="웨딩 사진 2">
+                </div>
+                <div class="swiper-slide">
+                    <img src="gallery/008.jpeg" alt="웨딩 사진 3">
+                </div>
+                <div class="swiper-slide">
+                    <img src="gallery/010.jpeg" alt="웨딩 사진 4">
+                </div>
+                <div class="swiper-slide">
+                    <img src="gallery/005.jpeg" alt="웨딩 사진 5">
+                </div>
+            </div>
+        </div>
+        <div class="gallery-pagination"></div>
+    </div>
+    <p class="gallery-instruction">← 좌우로 밀어서 더 많은 사진을 확인하세요 →</p>
+</div>
+        
+        <div class="footer">
+            <p>© 2025 정지원 & 이영은의 결혼식</p>
+        </div>
+    </div>
+
+    <!-- body 태그 닫기 전에 Swiper JS와 갤러리 스크립트 추가 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.4.1/swiper-bundle.min.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1.2,
+            spaceBetween: 20,
+            centeredSlides: true,
+            grabCursor: true,
+            loop: true,
+            pagination: {
+                el: ".gallery-pagination",
+                clickable: true,
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2.2,
+                },
+                768: {
+                    slidesPerView: 2.5,
+                },
+                1024: {
+                    slidesPerView: 3.5,
+                },
+            },
+        });
+    });
+</script>
+
+<audio autoplay loop>
+  <source src="lovely.mp3" type="audio/mpeg">
+</audio>
+
+</body>
+</html>
